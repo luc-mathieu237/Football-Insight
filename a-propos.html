@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>À propos · Football Insights</title>
+  <meta name="description" content="Pourquoi ce projet existe, quelles données il utilise, comment il a été construit et ses limites.">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="entete">
+    <a class="marque" href="index.html">
+      <img src="images/Trophée Des Champions.png" alt="" width="36" height="43">
+      <span>Football Insights</span>
+    </a>
+    <nav class="menu" aria-label="Navigation principale">
+      <a href="index.html">Profil</a>
+      <a href="statistiques.html">Statistiques</a>
+      <a href="a-propos.html" aria-current="page">À propos</a>
+    </nav>
+  </header>
+ 
+  <main class="conteneur texte">
+ 
+    <h1>À propos du projet</h1>
+    <img class="illustration" src="images/terrain.svg" width="900" height="560"
+         alt="Schéma d’un terrain de football avec les zones de tir fictives de la saison 2024-2025">
+ 
+    <h2>Le problème</h2>
+    <p>Les statistiques d’un joueur sont souvent dispersées dans des tableaux difficiles à lire.
+       Ce site rassemble l’essentiel sur des pages claires, lisibles sur téléphone, pour qu’un supporter
+       ou un recruteur comprenne en quelques secondes la progression d’un attaquant.</p>
+ 
+    <h2>Pour qui ?</h2>
+    <p>Pour les supporters, les recruteurs et les staffs qui veulent une vue rapide, sans jargon.</p>
+ 
+    <h2>Les données</h2>
+    <p>Toutes les statistiques sont fictives et ont été créées pour cet exercice. Elles sont écrites à la main
+       dans le fichier <code>js/data.js</code>. Aucun service externe n’est utilisé : si l’on change une valeur
+       dans ce fichier, tout le site se met à jour.</p>
+ 
+    <h2>La méthode</h2>
+    <p>Le contenu est structuré en HTML, mis en forme en CSS, puis rendu vivant par JavaScript
+       (tableau, filtre, graphique). Le projet est versionné avec Git et publié avec GitHub Pages.
+       Une maquette sur papier a précédé le code.</p>
+ 
+    <h2>Les limites</h2>
+    <p>Les données étant fictives, aucune conclusion sportive réelle ne peut en être tirée. Seules quatre saisons
+       sont présentées, sans contexte sur les adversaires. Le schéma de terrain est illustratif.</p>
+ 
+    <h2>Prochaines améliorations</h2>
+    <p>Ajouter d’autres joueurs, comparer deux profils, proposer un mode sombre et enrichir les graphiques.</p>
+ 
+    <h2>Crédits</h2>
+    <p>Illustrations originales créées pour le projet (dossier <code>images</code>).
+       Polices Barlow et Barlow Condensed, Google Fonts, licence SIL Open Font.</p>
+ 
+  </main>
+ 
+  <footer class="pied">
+    <p>Projet pédagogique RESOBIL · Football Digital Lab. Données fictives, illustrations originales.</p>
+  </footer>
+ 
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

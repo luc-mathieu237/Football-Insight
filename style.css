@@ -1,0 +1,239 @@
+/* =========================================================
+   Football Insights : feuille de style
+    base, couleurs, typographie, en-tête, bouton, pied
+   ========================================================= */
+ 
+/* 1. Les variables : les couleurs et polices du projet */
+:root {
+  --nuit: #0e2f27; /* vert très foncé : fonds sombres et titres */
+  --gazon: #1f7a4d; /* vert pelouse : liens et barres */
+  --craie: #f6f5ef; /* blanc cassé : fond des pages */
+  --soleil: #f5a623; /* orange lever de soleil : accents */
+  --encre: #15231e; /* texte principal */
+  --gris: #5b6b64; /* texte secondaire */
+  --trait: #d8dcd3; /* fines lignes */
+  --police-titre: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+  --police-texte: "Barlow", Arial, sans-serif;
+}
+ 
+/* 2. Réglages de base */
+* , *::before, *::after { box-sizing: border-box; }
+ 
+body {
+  margin: 0;
+  font-family: var(--police-texte);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--encre);
+  background: var(--craie);
+}
+ 
+img { max-width: 100%; height: auto; display: block; }
+ 
+h1, h2, h3 {
+  font-family: var(--police-titre);
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  color: var(--nuit);
+  margin: 0 0 0.6em;
+}
+h1 { font-size: 2.6rem; }
+h2 { font-size: 1.9rem; margin-top: 2rem; }
+ 
+a { color: var(--gazon); }
+code { background: #e9ece4; padding: 0.1em 0.35em; border-radius: 4px; }
+ 
+/* 3. Un bloc centré qui limite la largeur du contenu */
+.conteneur {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+ 
+/* 4. En-tête et menu */
+.entete {
+  background: var(--nuit);
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  padding: 0.75rem 1rem;
+}
+.marque {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: white;
+  text-decoration: none;
+  font-family: var(--police-titre);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.menu { display: flex; gap: 1.25rem; }
+.menu a {
+  color: #dfe9e3;
+  text-decoration: none;
+  padding: 0.25rem 0;
+  border-bottom: 3px solid transparent;
+}
+.menu a:hover,
+.menu a[aria-current="page"] {
+  color: white;
+  border-bottom-color: var(--soleil);
+}
+ 
+/* 5. Bouton et pied de page */
+.bouton {
+  display: inline-block;
+  background: var(--soleil);
+  color: var(--nuit);
+  font-weight: 600;
+  padding: 0.75rem 1.4rem;
+  border-radius: 999px;
+  text-decoration: none;
+}
+.bouton:hover { background: #ffb940; }
+ 
+.pied {
+  background: var(--nuit);
+  color: #c4d3cb;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+}
+.pied p { margin: 0; }
+
+/* =========================================================
+    mise en page (Flexbox et Grid), image d’accueil,
+   fiche joueur, chiffres, tableau, graphique
+   ========================================================= */
+ 
+/* 6. Image d’accueil (hero) : un dégradé sombre posé sur l’illustration */
+.hero {
+  background:
+    linear-gradient(90deg, rgba(10, 31, 24, 0.88), rgba(10, 31, 24, 0.25)),
+    url("../images/hero.svg") center / cover no-repeat;
+  color: white;
+  min-height: 26rem;
+  display: flex;
+  align-items: center;
+}
+.hero-texte {
+  width: 100%;
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+.hero h1 { color: white; font-size: 3.4rem; margin-bottom: 0.3em; }
+.accroche { max-width: 30rem; font-size: 1.25rem; margin: 0 0 1.75rem; }
+ 
+/* 7. Profil : portrait et fiche côte à côte (Grid) */
+.profil { display: grid; gap: 2rem; }
+.portrait { width: 100%; max-width: 22rem; border-radius: 16px; }
+.fiche {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1.5rem;
+  margin: 0 0 1.5rem;
+}
+.fiche dt { color: var(--gris); }
+.fiche dd { margin: 0; font-weight: 600; }
+ 
+/* 8. Chiffres clés */
+.chiffres {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 3px solid var(--nuit);
+}
+.chiffre { padding: 1rem 0.75rem 1rem 0; border-bottom: 1px solid var(--trait); }
+.chiffre strong {
+  display: block;
+  font-family: var(--police-titre);
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--gazon);
+}
+.chiffre span { color: var(--gris); }
+.note { color: var(--gris); font-size: 0.9rem; }
+ 
+/* 9. Filtres, tableau et graphique */
+.intro { max-width: 40rem; }
+.filtres { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 2rem; }
+.filtre {
+  font: inherit;
+  background: white;
+  color: var(--nuit);
+  border: 2px solid var(--nuit);
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.filtre[aria-pressed="true"] { background: var(--nuit); color: white; }
+ 
+.defile { overflow-x: auto; }
+table { width: 100%; min-width: 34rem; border-collapse: collapse; background: white; }
+th, td { padding: 0.7rem 0.9rem; text-align: right; border-bottom: 1px solid var(--trait); }
+th:nth-child(-n+2), td:nth-child(-n+2) { text-align: left; }
+thead th { background: var(--nuit); color: white; font-weight: 600; }
+.invisible { position: absolute; left: -9999px; }
+ 
+label { font-weight: 600; margin-right: 0.5rem; }
+select {
+  font: inherit;
+  padding: 0.4rem 0.6rem;
+  border: 2px solid var(--nuit);
+  border-radius: 8px;
+  background: white;
+}
+.graphique { display: grid; gap: 0.6rem; margin: 1.25rem 0; }
+.barre-ligne {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr 2.5rem;
+  align-items: center;
+  gap: 0.75rem;
+}
+.piste { background: #e3e7df; border-radius: 6px; height: 1.6rem; overflow: hidden; }
+.barre {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--gazon), #35a56c);
+  border-radius: 6px;
+  transition: width 0.8s ease;
+}
+.valeur { font-weight: 600; text-align: right; }
+.resume { font-weight: 600; }
+ 
+/* 10. Encadré source, page « À propos » */
+.encadre {
+  background: white;
+  border-left: 6px solid var(--soleil);
+  padding: 0.25rem 1.25rem 1rem;
+  margin-top: 2.5rem;
+}
+.encadre h2 { margin-top: 1rem; }
+.texte { max-width: 46rem; }
+.illustration { border-radius: 16px; margin: 1rem 0 2rem; }
+
+/* =========================================================
+Responsive (Mobile d'abord) et accessibilité 
+========================================================= */
+
+@media (min-width:700px){ 
+  h1{ font-size: 3.2rem;}
+  h2{ font-size: 2.2rem;}
+  .hero h1 { font-size: 5rem;}
+  .profil { grid-template-columns: repeat(4,1fr);}
+  .chiffre { padding: 1,25rem; border-bottom: 0;border-right: 1px solid var(--trait);}
+  .chiffre:last-child { border-right: 0;}
+  .barre-ligne { grid-template-columns: 9rem 1fr 3rem;}
+}
+@media(min-width:1000px){ 
+    .hero{ min-width: 34rem;}
+}
+/*Accessibilité: un contour visible quand on navigue au clavier */
+:focus-visible {outline: 3px solid #1a5fb4; outline-offset: 3px;}
+/* respect des personnes qui réduisent les animations*/
+@media(prefers-reduced-motion: reduce){
+}

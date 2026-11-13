@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Statistiques · Football Insights</title>
+  <meta name="description" content="Statistiques saison par saison de Samuel Ndiaye : tableau, filtre et graphique.">
+  <link rel="icon" href="images/Trophée Des Champions.png" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="entete">
+    <a class="marque" href="index.html">
+      <img src="images/Trophée Des Champions.png" alt="" width="36" height="43">
+      <span>Football Insights</span>
+    </a>
+    <nav class="menu" aria-label="Navigation principale">
+      <a href="index.html">Profil</a>
+      <a href="statistiques.html" aria-current="page">Statistiques</a>
+      <a href="a-propos.html">À propos</a>
+    </nav>
+  </header>
+ 
+  <main class="conteneur">
+ 
+    <h1>Statistiques</h1>
+    <p class="intro">Choisis une saison pour filtrer le tableau et le graphique, ou compare-les toutes.</p>
+ 
+    <div class="filtres" id="filtres" role="group" aria-label="Filtrer par saison"></div>
+ 
+    <section>
+      <h2>Saison par saison</h2>
+      <div class="defile">
+        <table>
+          <caption class="invisible">Statistiques de Samuel Ndiaye par saison</caption>
+          <thead>
+            <tr>
+              <th>Saison</th>
+              <th>Compétition</th>
+              <th>Matchs</th>
+              <th>Buts</th>
+              <th>Passes</th>
+              <th>Tirs cadrés</th>
+            </tr>
+          </thead>
+          <tbody id="corps-tableau"></tbody>
+        </table>
+      </div>
+    </section>
+ 
+    <section>
+      <h2>Comparer les saisons</h2>
+      <label for="indicateur">Indicateur</label>
+      <select id="indicateur">
+        <option value="buts">Buts</option>
+        <option value="passes">Passes décisives</option>
+        <option value="matchs">Matchs joués</option>
+        <option value="tirsCadres">Tirs cadrés</option>
+      </select>
+      <div class="graphique" id="graphique" aria-live="polite"></div>
+      <p class="resume" id="resume"></p>
+    </section>
+ 
+    <section class="encadre">
+      <h2>Source et limites</h2>
+      <p id="source"></p>
+    </section>
+ 
+  </main>
+ 
+  <footer class="pied">
+    <p>Projet pédagogique RESOBIL · Football Digital Lab. Données fictives, illustrations originales.</p>
+  </footer>
+ 
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
